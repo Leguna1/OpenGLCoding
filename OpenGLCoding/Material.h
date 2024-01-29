@@ -1,22 +1,20 @@
 #pragma once
+
 #include "Shader.h"
 #include "glad/glad.h"
 
-class Material
-{
-	unsigned int orangeShaderProgram;
+class Material {
+    unsigned int shaderProgram;
 
 public:
-	Material(Shader, vertexShader, shader fragmentShader)
-	{
-		orangeShaderProgram = glCreateProgram();
-		glAttachShader(orangeShaderProgram, vertexShader.shaderId);
-		glAttachShader(orangeShaderProgram, orangeShader.shaderId);
-		glLinkProgram(orangeShaderProgram);
-	}
-	void use()
-	{
-		glUseProgram(orangeShaderProgram);
+    Material(Shader& vertexShader, Shader& fragmentShader) {
+        shaderProgram = glCreateProgram();
+        glAttachShader(shaderProgram, vertexShader.getShaderId());
+        glAttachShader(shaderProgram, fragmentShader.getShaderId());
+        glLinkProgram(shaderProgram);
+    }
 
-	}
+    void use() const {
+        glUseProgram(shaderProgram);
+    }
 };

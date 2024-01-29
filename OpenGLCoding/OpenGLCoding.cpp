@@ -13,7 +13,7 @@ void processInput(GLFWwindow*);
 int main() {
     Window window{ 800, 600 };
 
-    // Create triangles
+    // Draw triangles
     float vertices1[] = {
         -0.5f, -0.5f, 0.0f,
          0.5f, -0.5f, 0.0f,
@@ -22,52 +22,23 @@ int main() {
 
     float vertices2[] = {
         0.5f, -0.5f, 0.0f,
-       -0.5f,  0.5f, 0.0f,
+       -0.5f,  0.1f, 0.0f,
         0.5f,  0.5f, 0.0f
     };
 
     Mesh mesh1{ vertices1, sizeof(vertices1) / sizeof(float) };
     Mesh mesh2{ vertices2, sizeof(vertices2) / sizeof(float) };
 
-    Shader vertexShaderSource{ R"(
-        #version 330 core
-        layout (location = 0) in vec3 aPos;
-        void main() {
-            gl_Position = vec4(aPos, 1.0);
-        }
-    )", GL_VERTEX_SHADER };
 
-    Shader orangeVertexShader{ R"(
-        #version 330 core
-        layout (location = 0) in vec3 aPos;
-        void main() {
-            gl_Position = vec4(aPos, 1.0);
-        }
-    )", GL_VERTEX_SHADER };
+    Shader vertexShaderSource{ "vertexShader.glsl", GL_VERTEX_SHADER};
 
-    Shader orangeFragmentShader{ R"(
-        #version 330 core
-        out vec4 FragColor;
-        void main() {
-            FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-        }
-    )", GL_FRAGMENT_SHADER };
+    Shader orangeVertexShader{ "vertexShader.glsl", GL_VERTEX_SHADER};
 
-    Shader yellowVertexShader{ R"(
-        #version 330 core
-        layout (location = 0) in vec3 aPos;
-        void main() {
-            gl_Position = vec4(aPos, 1.0);
-        }
-    )", GL_VERTEX_SHADER };
+    Shader orangeFragmentShader{ "fragmentShader.glsl", GL_FRAGMENT_SHADER};
 
-    Shader yellowFragmentShader{ R"(
-        #version 330 core
-        out vec4 FragColor;
-        void main() {
-            FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);
-        }
-    )", GL_FRAGMENT_SHADER };
+    Shader yellowVertexShader{ "vertexShader.glsl", GL_VERTEX_SHADER };
+
+    Shader yellowFragmentShader{ "fragmentShader.glsl", GL_FRAGMENT_SHADER };
 
     Material orangeMaterial{ orangeVertexShader, orangeFragmentShader };
     Material yellowMaterial{ yellowVertexShader, yellowFragmentShader };

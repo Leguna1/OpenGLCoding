@@ -8,6 +8,7 @@ class Material {
 
 public:
     Material(Shader& vertexShader, Shader& fragmentShader) {
+
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader.getShaderId());
         glAttachShader(shaderProgram, fragmentShader.getShaderId());

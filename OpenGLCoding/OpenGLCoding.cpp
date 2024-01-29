@@ -11,40 +11,39 @@ using namespace std;
 void processInput(GLFWwindow*);
 
 int main() {
-    Window window{ 800, 600 };
+    Window window{ 1280, 800 };
 
     // Draw triangles
     float vertices1[] = {
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f
+         -1.0f,  -1.0f, 0.0f, //First Column (X coordinates):
+         1.0f,  0.0f, 0.0f, //First Column (Y coordinates):
+         0.0f,  0.0f, 0.0f  //First Column (Z coordinates):
     };
 
-    float vertices2[] = {
-        0.5f, -0.5f, 0.0f,
-       -0.5f,  0.1f, 0.0f,
+    /*float vertices2[] = {
+       -0.5f, -0.5f, 0.0f,
+        0.5f,  0.1f, 0.0f,
         0.5f,  0.5f, 0.0f
-    };
+    };*/
 
     Mesh mesh1{ vertices1, sizeof(vertices1) / sizeof(float) };
-    Mesh mesh2{ vertices2, sizeof(vertices2) / sizeof(float) };
+   // Mesh mesh2{ vertices2, sizeof(vertices2) / sizeof(float) };
 
 
     Shader vertexShaderSource{ "vertexShader.glsl", GL_VERTEX_SHADER};
 
     Shader orangeVertexShader{ "vertexShader.glsl", GL_VERTEX_SHADER};
-
     Shader orangeFragmentShader{ "fragmentShader.glsl", GL_FRAGMENT_SHADER};
 
-    Shader yellowVertexShader{ "vertexShader.glsl", GL_VERTEX_SHADER };
 
+    Shader yellowVertexShader{ "vertexShader.glsl", GL_VERTEX_SHADER };
     Shader yellowFragmentShader{ "fragmentShader.glsl", GL_FRAGMENT_SHADER };
 
     Material orangeMaterial{ orangeVertexShader, orangeFragmentShader };
     Material yellowMaterial{ yellowVertexShader, yellowFragmentShader };
 
     Triangle triangle1{ &orangeMaterial, &mesh1 };
-    Triangle triangle2{ &yellowMaterial, &mesh2 };
+    //Triangle triangle2{ &yellowMaterial, &mesh2 };
 
     while (!window.shouldClose()) {
         window.processInput();
@@ -52,7 +51,7 @@ int main() {
         window.clear();
 
         triangle1.render();
-        triangle2.render();
+        //triangle2.render();
 
         window.present();
     }

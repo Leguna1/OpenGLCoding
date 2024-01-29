@@ -58,7 +58,7 @@ public:
 
     }
 
-    Shader(const Shader&) = delete;//avoid accidentally being cloned thats why
+    Shader(const Shader&) = delete;//to not get copies
 
     ~Shader() {//delete the shader from gpu 
         glDeleteShader(shaderId);

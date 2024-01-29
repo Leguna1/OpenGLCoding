@@ -36,7 +36,7 @@ public:
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-        window = glfwCreateWindow(800, 600, "LearnOpenCoding", nullptr, nullptr);
+        window = glfwCreateWindow(1280, 800, "LearnOpenCoding", nullptr, nullptr);
 
         if (window == nullptr) {
             cout << "Failed to create GLFW window" << endl;

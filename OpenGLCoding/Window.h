@@ -73,7 +73,7 @@ public:
     }
 
     void clearBgColor() {
-        glClearColor(0, 1, 1, 1);
+        glClearColor(0.270, 0.00, 0.229, 1);
         glClear(GL_COLOR_BUFFER_BIT);
     }
 };

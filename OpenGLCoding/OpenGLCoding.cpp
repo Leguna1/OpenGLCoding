@@ -13,10 +13,12 @@ void processInput(GLFWwindow*);
 int main() {
     Window window{ 1280, 800 };
 
-    Vertex vertices1[] = {
+    Vertex vertices1[] = 
+    {                   // [X]    [Y]   [Z] 
          Vertex{Vector3{  0.0f,  0.0f, 0.0f}, Color::red},
          Vertex{Vector3{ -0.8f,  0.0f, 0.0f}, Color::green},
-         Vertex{Vector3{ -0.4f,  0.8f, 0.4f}, Color::blue}
+         Vertex{Vector3{ 0.4f,  0.8f, 0.4f}, Color::blue},
+         Vertex{Vector3{ 0.4f,  0.8f, 0.4f}, Color::blue}
     };
 
     Vertex vertices2[] = {

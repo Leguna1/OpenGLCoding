@@ -63,6 +63,12 @@ int main() {
 
         window.clearBgColor();
 
+        // Update the time value for each frame
+        float currentTime = glfwGetTime();
+        triangle1.setTime(currentTime);
+        triangle2.setTime(currentTime);
+        triangle3.setTime(currentTime);
+
         triangle1.render();
         triangle2.render();
         triangle3.render();

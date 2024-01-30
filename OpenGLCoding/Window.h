@@ -72,8 +72,8 @@ public:
             glfwSetWindowShouldClose(window, true);
     }
 
-    void clear() {
-        glClearColor(0.0f, 0.3f, 0.3f, 1.0f);
+    void clearBgColor() {
+        glClearColor(-1, 1, 1, 1);
         glClear(GL_COLOR_BUFFER_BIT);
     }
 };

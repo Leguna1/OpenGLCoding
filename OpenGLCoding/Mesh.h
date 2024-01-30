@@ -19,7 +19,7 @@ struct Color
 struct Vertex
 {
     Vector3 pos;
-    Color col{ 1, 1, 1, 1 };
+    Color col{ 0, 0, 1, 1 };
 };
 
 class Mesh

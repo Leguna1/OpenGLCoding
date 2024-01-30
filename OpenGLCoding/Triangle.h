@@ -21,7 +21,7 @@ public:
         material->use();
 
         int tintLocation = glGetUniformLocation(material->shaderProgram, "tintColor");
-        glUniform4f(tintLocation, 0, 0, 0, 1);
+        glUniform4f(tintLocation, 1, 1, 0, 1);
 
         // Pass the time value to the shader
         int timeLocation = glGetUniformLocation(material->shaderProgram, "time");

@@ -13,31 +13,28 @@ void processInput(GLFWwindow*);
 int main() {
     Window window{ 1280, 800 };
 
-    // Triangle 1
-    float vertices1[] = {
-         0.0f,  0.0f, 0.0f,
-         -0.8f,  0.0f, 0.0f,
-         -0.4f,  0.8f, 0.4f
+    Vertex vertices1[] = {
+         Vertex{Vector3{  0.0f,  0.0f, 0.0f}, Color::red},
+         Vertex{Vector3{ -0.8f,  0.0f, 0.0f}, Color::green},
+         Vertex{Vector3{ -0.4f,  0.8f, 0.4f}, Color::blue}
     };
 
-    // Triangle 2
-    float vertices2[] = {
-         0.0f,  0.0f, 0.0f,
-         0.8f,  0.0f, 0.0f,
-         0.4f,  0.8f, 0.4f
+    Vertex vertices2[] = {
+          Vertex{Vector3{ 0.0f,  0.0f, 0.0f}, Color::blue},
+          Vertex{Vector3{ 0.8f,  0.0f, 0.0f}, Color::red},
+          Vertex{Vector3{ 0.4f,  0.8f, 0.4f}, Color::green},
     };
 
-    // Triangle 3
-    float vertices3[] = {
-         0.8f,  0.0f, 0.0f,
-         1.6f,  0.0f, 0.0f,
-         1.2f,  0.8f, 0.4f
+    Vertex vertices3[] = {
+           Vertex{Vector3{0.8f,  0.0f, 0.0f}, Color::green},
+           Vertex{Vector3{1.6f,  0.0f, 0.0f}, Color::red},
+           Vertex{Vector3{1.2f,  0.8f, 0.4f}, Color::blue}
     };
 
 
-    Mesh mesh1{ vertices1, sizeof(vertices1) / sizeof(float) };
-    Mesh mesh2{ vertices2, sizeof(vertices2) / sizeof(float) };
-    Mesh mesh3{ vertices3, sizeof(vertices3) / sizeof(float) };
+    Mesh mesh1{ vertices1, sizeof(vertices1) / sizeof(Vertex) };
+    Mesh mesh2{ vertices2, sizeof(vertices2) / sizeof(Vertex) };
+    Mesh mesh3{ vertices3, sizeof(vertices3) / sizeof(Vertex) };
 
 
     Shader vertexShaderSource{ "vertexShader.glsl", GL_VERTEX_SHADER};
@@ -56,10 +53,11 @@ int main() {
 
 
     Triangle triangle1{ &redMaterial, &mesh1 };
-    triangle1.red = 1;
+    
     Triangle triangle2{ &greenMaterial, &mesh2 };
+    
     Triangle triangle3{ &blueMaterial, &mesh3 };
-
+   
     while (!window.shouldClose()) {
         window.processInput();
 

@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\include;$(SolutionDir)\ext\glad\include;$(SolutionDir)\ext\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\include;$(SolutionDir)\ext\glad\include;$(SolutionDir)\ext\Include;$(SolutionDir)\ext\stb\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\include;$(SolutionDir)\ext\glad\include;$(SolutionDir)\ext\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\include;$(SolutionDir)\ext\glad\include;$(SolutionDir)\ext\Include;$(SolutionDir)\ext\stb\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\ext\glfw-3.3.9.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

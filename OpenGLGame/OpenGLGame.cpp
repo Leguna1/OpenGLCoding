@@ -101,6 +101,10 @@ int main() {
     Triangle b{ &orange, &mesh2 };
     b.red = 0.5f;
     Triangle c{ &textured, &mesh3 };
+    //Triangle c{ &textured, &mesh3, &wall };
+    //c.horizontalOffset = -0.5;
+    //Triangle d{ &textured, & mesh3, &container };
+    //d.horizontalOffset = +0.5f;
 
     //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
 
@@ -118,6 +122,7 @@ int main() {
         //c.horizontalOffset = cos(glfwGetTime());
 
         c.render();
+        //d.render();
 
         window.present();
     }

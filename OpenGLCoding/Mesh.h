@@ -2,6 +2,11 @@
 #include <cstddef>
 #include "glad/glad.h"
 
+struct Vector2
+{
+    float x, y;
+};
+
 struct Vector3
 {
     float x, y, z;

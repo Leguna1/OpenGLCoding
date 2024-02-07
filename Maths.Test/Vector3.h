@@ -36,6 +36,7 @@ public:
         return x == other.x && y == other.y && z == other.z;
     }
 
+
     bool operator!=(const Vector3& other) const { // <- this function does not change THIS
         return !(*this == other);
     }
@@ -48,4 +49,14 @@ public:
     Vector3 operator*(float k) const {
         return Vector3(x * k, y * k, z * k);
     }
+    
+    auto Vector3::SquareMagnitude() const
+    {
+        return float(sqrt(x * 2 + y * 2 + z * 2));
+    }
+
+    /*static Vector3 Vector3::Cross(Vector3 Vector3)
+    {
+        return Vector3 ()
+    }*/
 };

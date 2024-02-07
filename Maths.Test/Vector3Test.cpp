@@ -31,3 +31,7 @@ TEST(Vector3_Negate, InvertsPositiveValues) {
 TEST(Vector3_ScalarMultiplication, ScalesAllValues) {
     EXPECT_EQ(Vector3(3, 4, 5) * 2, Vector3(6, 8, 10));
 }
+TEST(Vector3_Magnintude, CalculateMagnintude)
+{
+
+}

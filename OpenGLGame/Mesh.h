@@ -2,6 +2,7 @@
 
 #include "glad/glad.h"
 #include <cstddef>
+#include "Vector"
 
 struct Vector2 {
     float x, y;
